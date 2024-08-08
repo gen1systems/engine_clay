@@ -15,7 +15,7 @@ export class Vertices extends Primitive {
    * The color of all the points.
    */
   set baseColor(color: THREE.Color) {
-    super.baseColor = color;
+    this._baseColor.copy(color); // Access the protected property directly
     const allIDs = this.idMap.ids;
     const unselected = this.selected.getUnselected(allIDs);
     this.updateColor(unselected);
@@ -25,7 +25,7 @@ export class Vertices extends Primitive {
    * The color of all the selected points.
    */
   set selectColor(color: THREE.Color) {
-    super.selectColor = color;
+    this._selectColor.copy(color); // Access the protected property directly
     this.updateColor(this.selected.data);
   }
 
