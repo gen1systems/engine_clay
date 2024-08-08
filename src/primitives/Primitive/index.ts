@@ -13,8 +13,8 @@ export abstract class Primitive {
    */
   selected = new Selector();
 
-  protected _baseColor = new THREE.Color(0.5, 0.5, 0.5);
-  protected _selectColor = new THREE.Color(1, 0, 0);
+  protected _baseColor = new THREE.Color(0.5, 0.5, 0.5); // Change to protected
+  protected _selectColor = new THREE.Color(1, 0, 0); // Change to protected
 
   /**
    * The list of ids of the {@link list} of items.
