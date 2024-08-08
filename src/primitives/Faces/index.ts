@@ -59,7 +59,7 @@ export class Faces extends Primitive {
    * The color of all the points.
    */
   set baseColor(color: THREE.Color) {
-    super.baseColor = color;
+    this._baseColor.copy(color); // Access the protected property directly
     const unselected = this.selected.getUnselected(this.ids);
     this.updateColor(unselected);
     this.vertices.baseColor = color;
@@ -69,7 +69,7 @@ export class Faces extends Primitive {
    * The color of all the selected points.
    */
   set selectColor(color: THREE.Color) {
-    super.selectColor = color;
+    this._selectColor.copy(color); // Access the protected property directly
     this.updateColor(this.selected.data);
     this.vertices.selectColor = color;
   }
